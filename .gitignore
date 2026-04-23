@@ -1,0 +1,55 @@
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+*.log
+
+# Virtualenvs
+.venv/
+venv/
+Code/venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node / React
+node_modules/
+dist/
+.vite/
+.parcel-cache/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Model / large artifacts (keep sources, not weights)
+Code/models/*.pth
+Code/models/*.pt
+Code/models/*.onnx
+Code/models/*.ckpt
+
+# Don't commit large ML artifacts / datasets / legacy experiments
+Code/models/*.pkl
+Code/legacy/
+
+# Data / documents (optional: remove if you want tracked)
+Documents/
+
+# Generated build artifacts
+frontend/tsconfig.tsbuildinfo
+
+# Legacy / incompatible pickles
+Code/model.pickle
+
