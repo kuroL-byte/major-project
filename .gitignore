@@ -35,21 +35,21 @@ dist/
 .idea/
 
 # Model / large artifacts (keep sources, not weights)
-Code/models/*.pth
-Code/models/*.pt
-Code/models/*.onnx
-Code/models/*.ckpt
+# Code/models/*.pth
+# Code/models/*.pt
+# Code/models/*.onnx
+# Code/models/*.ckpt
 
 # Don't commit large ML artifacts / datasets / legacy experiments
-Code/models/*.pkl
-Code/legacy/
+# Code/models/*.pkl
+# Code/legacy/
 
 # Data / documents (optional: remove if you want tracked)
-Documents/
+# Documents/
 
 # Generated build artifacts
 frontend/tsconfig.tsbuildinfo
 
 # Legacy / incompatible pickles
-Code/model.pickle
+# Code/model.pickle
 

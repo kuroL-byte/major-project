@@ -1,0 +1,13 @@
+streamlit
+torch
+torchvision
+Pillow
+fastapi
+uvicorn[standard]
+torch
+torchvision
+pillow
+python-dotenv
+torch
+torchvision
+torchaudio
