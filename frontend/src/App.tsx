@@ -7,7 +7,7 @@ type NavItem = {
   active?: boolean;
 };
 
-type Page = "Dashboard" | "Predictions" | "Alerts" | "Map" | "Settings";
+type Page = "Dashboard" | "Predictions" | "Alerts" | "Map" | "EMS Services" | "Settings";
 
 type Toast = { id: string; title: string; message?: string; tone?: "primary" | "success" | "danger" };
 
@@ -612,6 +612,28 @@ function MapPage() {
   );
 }
 
+function EMSServicesPage() {
+  return (
+    <GlassCard
+      title="EMS Services"
+      subtitle="Interactive map view of local emergency medical services"
+    >
+      <div className="relative h-[65dvh] min-h-[500px] w-full overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10">
+        <iframe
+          src="https://www.google.com/maps/d/u/4/embed?mid=1qe6YypS5YWtfFsknEEl3pFOXfuPtXMA&ehbc=2E312F&noprof=1&ll=18.92286033774148%2C72.82634314999997&z=14"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          title="EMS Services Map"
+          className="absolute inset-0"
+        />
+      </div>
+    </GlassCard>
+  );
+}
+
 function PredictionsPage({
   onToast
 }: {
@@ -1163,6 +1185,33 @@ export function App() {
       )
     },
     {
+      label: "EMS Services",
+      active: page === "EMS Services",
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+          <path
+            d="M4.5 12h15"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          <path
+            d="M12 4.5v15"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          />
+        </svg>
+      )
+    },
+    {
       label: "Settings",
       active: page === "Settings",
       icon: (
@@ -1434,6 +1483,8 @@ export function App() {
               <PredictionsPage onToast={pushToast} />
             ) : page === "Alerts" ? (
               <AlertsPage onToast={pushToast} />
+            ) : page === "EMS Services" ? (
+              <EMSServicesPage />
             ) : (
               <GlassCard title="Settings" subtitle="Project configuration (placeholder)">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
